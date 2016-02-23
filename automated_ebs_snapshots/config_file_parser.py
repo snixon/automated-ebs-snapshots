@@ -29,6 +29,7 @@ def get_configuration(filename):
             'access-key-id': conf.get('general', 'access-key-id'),
             'secret-access-key': conf.get('general', 'secret-access-key'),
             'region': conf.get('general', 'region'),
+	    'pid-file': conf.get('general', 'pid-file'),
         }
     except NoOptionError as err:
         logger.error('Error in config file: {}'.format(err))

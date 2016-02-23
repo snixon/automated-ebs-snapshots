@@ -115,13 +115,14 @@ def main():
         access_key_id = config['access-key-id']
         secret_access_key = config['secret-access-key']
         region = config['region']
+	pid-file = config['pid-file']
     else:
         access_key_id = args.access_key_id
         secret_access_key = args.secret_access_key
         region = args.region
+        pid_file = '/tmp/automatic-ebs-snapshots.pid'
 
     if args.daemon:
-        pid_file = '/tmp/automatic-ebs-snapshots.pid'
         daemon = AutoEBSDaemon(pid_file)
 
         if args.daemon == 'start':
